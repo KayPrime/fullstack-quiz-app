@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
+<%- include("partials/header") %>
+<title>Quiz App: Home</title>
 </head>
 <body>
-    <h1>Welcome to the quiz app</h1>
-    <button><a href="/start-quiz">Start Quiz</a></button>
-    <button><a href="/create-quiz">Create Quiz</a></button>
+    <%- include("partials/simple-header") %>
+   <div class="container d-flex flex-column align-items-center justify-content-center col text-center" style="min-height: 100vh;">
+    <h1 class="fs-1 my-3">Welcome to the Quiz App</h1>
+    <div class="container d-flex align-items-center justify-content-center my-3">
+        <a href="/start-quiz" class="text-decoration-none  btn btn-dark fs-2 col-4 mx-3 d-flex justify-content-center align-items-center" style="min-height: 10vh;">Start Quiz</a>
+        <a href="/create-quiz" class="text-decoration-none  btn btn-dark fs-2 col-4 mx-3 d-flex align-items-center justify-content-center" style="min-height: 10vh;">Create Quiz</a>
+    </div>
+   </div>
 </body>
 </html>

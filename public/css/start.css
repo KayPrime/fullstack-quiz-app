@@ -1,0 +1,19 @@
+.answer-set {
+border: 0.1rem solid black;
+margin: 1rem 2rem;
+padding: 1rem 2rem;
+border-radius: 1rem;
+display: flex;
+align-items: center;
+min-width: 70%;
+}
+
+.answer-label {
+margin: 0 0.5rem;
+
+}
+
+.answer-radio {
+margin: 0 0.5rem;
+transform: scale(1.5);
+}

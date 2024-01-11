@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("partials/header") %>
+    <title>Decision</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <body>
+        <%- include("partials/simple-header") %>
+        <div class="container d-flex flex-column align-items-center justify-content-center col text-center"
+            style="min-height: 100vh;">
+            <% if (locals.success) { %>
+                <h1 class="fs-1 my-3">saved successfully 🎉</h1>
+                <% } else { %>
+                    <h1 class="fs-1 my-3">Error saving document 😔</h1>
+                    <% } %>
+                        <div class="container d-flex align-items-center justify-content-center my-3">
+                            <a href="/create-quiz"
+                                class="text-decoration-none  btn btn-dark fs-2 col-4 mx-3 d-flex justify-content-center align-items-center"
+                                style="min-height: 10vh;">Create another quiz</a>
+                            <a href="/"
+                                class="text-decoration-none  btn btn-dark fs-2 col-4 mx-3 d-flex justify-content-center align-items-center"
+                                style="min-height: 10vh;">Return to home</a>
+                        </div>
+        </div>
+    </body>
 
-<body>
-    <% if (locals.success) { %>
-        <h1>saved successfully</h1>
-    <% } else { %>
-        <h1>Error saving document</h1>
-    <% } %>
-
-    <button><a href="/create-quiz">Create another quiz</a></button>
-    <button><a href="/">Return to home</a></button>
-</body>
-
-</html>
+    </html>

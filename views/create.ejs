@@ -1,37 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("partials/header") %>
+    <title>Create</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <form action="/submit-quiz" method="post">
-        <div>
-            <label for="question">Question</label>
-            <textarea name="question" id="" cols="30" rows="10"></textarea>
+    <body>
+        <%- include("partials/simple-header") %>
+        <div class="container">
+            <form action="/submit-quiz" method="post">
+                <div class="mb-3">
+                    <label for="question" class="form-label  fw-medium">Question</label>
+                    <textarea name="question" id="" rows="3" class="form-control" placeholder="Input the question here." required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="answer" class="form-label  fw-medium">Answer</label>
+                    <input type="text" name="answer" class="form-control"  placeholder="Input the correct answer here." required/>
+                </div>
+                <div class="mb-3">
+                    <label for="option1" class="form-label  fw-medium">Option 1</label>
+                    <input type="text" name="option1" class="form-control"  placeholder="Input the wrong option here." required/>
+                </div>
+                <div class="mb-3">
+                    <label for="option2" class="form-label  fw-medium">Option 2</label>
+                    <input type="text" name="option2" class="form-control"  placeholder="Input the wrong option here." required/>
+                </div>
+                <div class="mb-3">
+                    <label for="option3" class="form-label  fw-medium">Option 3</label>
+                    <input type="text" name="option3" class="form-control"  placeholder="Input the wrong option here." required/>
+                </div>
+                <div class="d-grid">
+                    <input type="submit" value="Submit" class="btn btn-dark btn-lg col fw-semibold">
+                </div>
+            </form>
         </div>
-        <div>
-            <label for="answer">Answer</label>
-            <input type="text" name="answer" />
-        </div>
-        <div>
-            <label for="option1">Option 1</label>
-            <input type="text" name="option1" />
-        </div>
-        <div>
-            <label for="option2">Option 2</label>
-            <input type="text" name="option2" />
-        </div>
-        <div>
-            <label for="option3">Option 3</label>
-            <input type="text" name="option3" />
-        </div>
-
-        <input type="submit" value="Submit">
-    </form>
-</body>
-
-</html>
+    </body>
+    </html>

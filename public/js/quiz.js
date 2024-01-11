@@ -5,7 +5,7 @@ window.addEventListener("load", async (e) => {
     const mainQuizDiv = document.querySelector(".quiz");
     const startQuizBtn = document.querySelector(".welcome-msg button");
     const welcomeMsgDiv = document.querySelector(".welcome-msg");
-    const scoreBoardDisp = document.querySelector(".score-board h2");
+    const scoreBoardDisp = document.querySelector(".score-board h1");
 
     const data = await getData()
     const { quizzes } = data;
@@ -20,7 +20,7 @@ window.addEventListener("load", async (e) => {
     startQuizBtn.addEventListener("click", (e) => {
         welcomeMsgDiv.remove();
         mainQuizDiv.style.display = "block";
-        `scoreBoardDisp.innerText = "Score: 0`
+        scoreBoardDisp.innerText = "Score: 0"
         startQuiz();
     })
 
@@ -47,17 +47,20 @@ window.addEventListener("load", async (e) => {
         referenceRandomArray = options;
         options.sort(() => Math.random() - 0.5);
         options.forEach((answer, index) => {
+            const answerDiv = document.createElement("div");
             const radio = document.createElement("input");
+            const label = document.createElement("label");
+            answerDiv.setAttribute("class", "answer-set");
+            radio.setAttribute("class", "answer-radio");
+            label.setAttribute("class", "answer-label fs-4")
             radio.type = "radio";
             radio.value = index;
             radio.name = "answer";
             radio.id = `answer-${index}`;
 
-            const label = document.createElement("label");
             label.htmlFor = `answer-${index}`;
             label.innerText = answer;
 
-            const answerDiv = document.createElement("div");
 
             answersDiv.append(answerDiv);
             answerDiv.append(radio, label);
@@ -95,8 +98,6 @@ window.addEventListener("load", async (e) => {
                 result.innerText = `Your final score is ${score}/${quizzes.length}`;
                 scoreBoardDisp.style.display = "none"
                 mainQuizDiv.append(result);
-
-
             } else {
                 setNextQuestion();
             }
